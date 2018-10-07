@@ -1,0 +1,20 @@
+setspeed 50 # set speed to 50%
+applypose default # apply default pose
+rotate 0; 45 # rotate the base 45* clockwise
+setvar Cnt; 0			# set variable "Cnt" to 0
+
+START:					# loop start
+	wait 0.5			# wait 0.5 seconds
+	rotate 2; 90		# rotate joint 2 to 90 degrees
+	
+	wait 0.5			# wait 0.5 seconds
+	rotate 1; 90 + Cnt	# rotate joint 2 to 90 + Cnt degrees
+	
+	setvar Cnt; Cnt + 5 # incrase "Cnt" by 5
+	
+	gotoif END; Cnt > 40# jump to the END label if "Cnt" is larger than 40
+	goto START			# jump to START label
+	
+END:
+applypose default		# apply default pose
+

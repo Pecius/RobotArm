@@ -1,0 +1,39 @@
+makepose pose1;(90, 110, 0, 0, 0)
+makepose pose2;(90, 110, 30, -90, 0)
+makepose pose3;(90, 4, 0, 90, 0)
+makepose pose4;(90, 4, -30, 90, 0)
+makepose pose5;(90, 4, -30, 31, 0)
+
+makepose grab; (0, 56, -130, 57, 0)
+makepose def90; (90, 135, -130, 0, 0)
+
+setspeed 50
+
+DEMO:
+ applypose pose1
+ wait 1
+ applypose pose2
+ wait 1
+
+ applypose def90
+ opengripper 1
+ wait 1
+ closegripper 1 
+
+ wait 1
+ rotate 5; 90
+ wait 1
+ rotate 5; -90
+ wait 1
+ rotate 5; 0
+ wait 1
+
+ applypose pose3
+ wait 0.1
+ applypose pose4
+ wait 0.1
+ applypose pose5
+ wait 1
+ 
+ applypose def90
+ 

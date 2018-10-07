@@ -1,0 +1,15 @@
+makepose test1; (-25, 80, -45, -90)
+makepose test2; (0, 90, 0, 0)
+makepose test3; (25, 100, 45, 90)
+setspeed 90/800
+syncmode 1
+
+START:
+	applypose test1
+	wait 2
+	applypose test2
+	wait 2
+	applypose test3
+	wait 2
+	
+	goto START

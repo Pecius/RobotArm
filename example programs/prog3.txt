@@ -1,0 +1,22 @@
+syncmode 1
+setspeed 90/700
+
+makepose startpose; (-45, 90, -140, 50) 
+
+START:
+	setvar Ya; -140
+	setvar Ea; 50
+	applypose startpose
+	
+	
+LOOP:
+	wait 1
+	rotate 0; -45
+	makepose GO; (45, 90, Ya, Ea)
+	applypose GO
+	
+	setvar Ya; Ya + 10
+	setvar Ea; (Ea - 10)
+	
+	gotoif START; Ya > -90
+	goto LOOP
